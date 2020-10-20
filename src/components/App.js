@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { setName, setAge } from '../actions/userActions';
 import Main from './Main'
 import User from './User'
 
@@ -27,18 +28,8 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
   return{
-    setName:(name)=>{
-      dispatch({
-        type:"SET_NAME",
-        payload:name
-      })},
-    
-      setAge:(age)=>{
-        dispatch({
-          type:"SET_AGE",
-          payload:age
-        })
-      }
+    setName:(name)=>{dispatch(setName(name))},
+    setAge:(age)=>{dispatch(setAge(age))}
   };
 };
 
